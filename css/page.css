@@ -1,0 +1,125 @@
+#page_header_intro {
+  padding-top: 80px;
+  padding-bottom: 20px;
+  background: url("../img/bg.jpg");
+  height: 100%;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  color: white;
+}
+
+#page_header_intro h3 {
+  text-transform: uppercase;
+  font-family: "Fira Sans", sans-serif;
+  font-weight: bold;
+  text-align: center;
+  font-size: 19px;
+  letter-spacing: 1px;
+}
+
+#page_header_intro h3 span {
+  text-transform: none;
+  font-weight: normal;
+  font-size: 17px;
+}
+
+#page_header_intro h3 span.dash_mark {
+  margin-left: 10px;
+  margin-right: 10px;
+  color: #f0f3f3;
+  font-size: 20px;
+}
+
+#page_body_section {
+  background: #ebe8eb;
+  color: #202526;
+}
+
+#page_body_section .container {
+  padding-top: 30px;
+  padding-bottom: 30px;
+}
+
+#page_body_section .body_section {
+  background: #ffffff;
+  width: calc(100% - 320px);
+  padding: 20px 10px;
+  float: left;
+}
+
+@media (max-width: 767.98px) {
+  #page_body_section .body_section {
+    width: calc(100%);
+  }
+}
+
+#page_body_section .body_section h3.post_heading {
+  font-size: 26px;
+  font-weight: bold;
+  margin-bottom: 0;
+}
+
+@media (max-width: 767.98px) {
+  #page_body_section .body_section h3.post_heading {
+    font-size: 23px;
+  }
+}
+
+#page_body_section .body_section p.post_meta {
+  font-size: 16px;
+  margin-top: 0;
+  font-style: italic;
+  font-family: "expo-serif-pro", Georgia, serif;
+}
+
+@media (max-width: 767.98px) {
+  #page_body_section .body_section p.post_meta {
+    font-size: 14px;
+  }
+}
+
+#page_body_section .body_section p.post_meta a {
+  font-style: normal;
+  font-family: "Fira Sans", sans-serif;
+}
+
+#page_body_section .sidebar_section {
+  min-width: 320px;
+  float: right;
+}
+
+@media (max-width: 767.98px) {
+  #page_body_section .sidebar_section {
+    width: 100%;
+    float: unset;
+  }
+}
+
+#page_body_section .sidebar_section .sidebar_widget_block {
+  margin: 0 auto;
+  width: 100%;
+}
+
+@media (max-width: 767.98px) {
+  #page_body_section .sidebar_section .sidebar_widget_block {
+    margin: 0 auto;
+  }
+}
+
+#page_body_section .sidebar_section .sidebar_widget_block .single_widget {
+  background: #ffffff;
+  float: right;
+  margin-bottom: 10%;
+  width: 90%;
+  height: 300px;
+}
+
+@media (max-width: 767.98px) {
+  #page_body_section .sidebar_section .sidebar_widget_block .single_widget {
+    max-width: 100%;
+    float: unset;
+    margin: 30px auto 0 auto;
+  }
+}
+/*# sourceMappingURL=page.css.map */

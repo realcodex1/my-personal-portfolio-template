@@ -1,0 +1,750 @@
+// Color Variables
+$colors: (
+    light_black: #202526,
+    grey_box:#f3f3f4,
+    blue_color:#0872b4,
+    buton_color:#e97c3a,
+    blog_background:#f0f3f3,
+    white_color: #ffffff,
+    grey_color:grey,
+);
+
+@function color($color-name){
+    @return map-get($colors,$color-name);
+}
+
+$title_font_size:33px;
+$title_font_size-mobile:27px;
+$subtitile_font_size: 17px;
+$subtitile_font_size-mobile: 16spx;
+$font: "Fira Sans", sans-serif;
+$font2:'expo-serif-pro', Georgia, serif;
+
+//###########################################################
+
+// Responsive
+$mobile:575.98px;
+$tab:767.98px;
+$tab-up:991.98px;
+
+@mixin tab {
+    @media (max-width: #{$tab}) { 
+        @content;
+    }
+}
+
+@mixin mobile {
+    @media (max-width: #{$mobile}) { 
+        @content;
+    }
+}
+
+@mixin tab-up {
+    @media (max-width: #{$tab-up}) { 
+        @content;
+    }
+}
+
+
+
+//######################################################################
+
+// CSS Styles
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    letter-spacing: .8px;
+}
+
+html{
+    scroll-behavior: smooth;
+}
+
+body{
+    font-family: $font;
+    font-size: 16px;
+}
+
+a{
+    color: color(blue_color);
+    text-decoration: none;
+    transition: 0.7s; 
+}
+
+a:hover{
+    color: color(buton_color);
+    text-decoration: none;
+}
+
+.active a{
+    color: color(buton_color) !important;
+}
+
+
+
+// Navigation Bar
+#navigation_bar{
+    background:color(light_black);
+    
+    img{
+        max-height: 25px;
+    }
+
+    .nav-link{
+        font-weight: bold;
+        color: color(white_color);
+        letter-spacing: 1px;
+
+        @include tab{
+           text-align: center;
+        }
+        
+    }
+
+    .nav-link:hover,.nav-link:focus{
+        color: color(buton_color);
+    }
+
+}
+
+// Header Intro
+#header_intro{
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    // Image
+    background: url('../img/bg.jpg');
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+
+    // Color
+    //background: color(blue_color);
+
+
+    color:color(white_color);
+
+    @include tab-up{
+        height: auto;
+    }
+
+    .container{
+        margin: 0 auto;
+        padding-top: 106px;
+        padding-bottom: 50px;
+
+        .author{
+            text-align: center;
+
+            .author_insude{
+                text-align: center;
+            }
+
+            h3{
+                font-weight: bold;
+                margin-bottom: 0;
+
+                span{
+                    font-weight: normal;
+                    font-style: italic;
+                }
+            }
+
+            p{
+                margin-top: -6px;
+                letter-spacing: 1.2px;
+                font-size: 15px;
+                font-style: italic;
+                font-family: $font2;
+            }
+
+            img{
+                border: 1px solid color(buton_color);
+                background: transparent;
+            }
+
+        
+            img:hover{
+                border: 1px solid color(buton_color);
+                background: color(buton_color);
+                transition: 0.7s;
+            }
+
+        }
+
+        .about{
+          
+            text-align: center;
+
+            .about_insude{
+                text-align: center;
+                margin-top: 35px;
+
+            }
+
+            .p1{
+                font-size: 25px;
+                font-weight: bold;
+                letter-spacing: 2px;
+                font-family: $font2;
+                text-transform: uppercase;
+                font-family: $font;
+
+                @include mobile{
+                    font-size: 23px;
+                }
+            }
+
+            .p2{
+                font-style: italic;
+                font-size: 18px;
+                letter-spacing: 1px;
+                margin-bottom: 5px;
+                font-family: $font2;
+
+                @include mobile{
+                    font-size: 17px;
+                }
+            }
+
+            .p3{
+                text-transform: uppercase;
+                font-weight: 800;
+                font-size: 50px;
+                letter-spacing: 4px;
+
+                @include mobile{
+                    font-size: 30px; 
+                }
+            }
+
+        }
+    }
+}
+
+
+// Get in Touch
+
+#get_in_touch{
+    background: color(grey_box);
+    padding-top: 10px;
+    padding-bottom: 10px;
+
+    @include mobile{
+        padding-top: 20px;
+        padding-bottom: 20px;
+
+    }
+
+    .text_line{
+      text-align: right;
+      margin-top: 8px;
+      color: color(grey_color);
+      letter-spacing: 1px;
+      font-style: italic;
+      font-size: 18px;
+      font-family: $font2;
+
+    
+
+      @include tab{
+        font-size: 16px; 
+        text-align: center;
+        margin-bottom: 10px;
+        }
+      
+    }
+
+    .button_line{
+        text-align: left;
+
+        a.btn{
+            background-color: color(buton_color);
+            text-transform: uppercase;
+            font-weight: bold;
+            display: block;
+            font-size: 16px;
+            max-width: 200px;
+            color:color(white_color);
+            border-color: color(buton_color);
+
+            @include tab{ 
+                margin: 0 auto;
+            }
+        }
+
+        a.btn:hover,a.btn:focus{
+            background-color: color(grey_color);
+            border-color: color(grey_color);
+            transition: 0.7s;
+        }
+    }
+}
+
+// Service Section
+#service_section{
+    margin-top: 40px;
+    margin-bottom: 40px;
+
+    .section_heading{
+        text-align: center;
+        margin-bottom: 30px !important;
+        max-width: 540px;
+        margin:  0 auto;
+
+        h2{
+            font-size: $title_font_size;
+            font-weight: bold;
+            letter-spacing: 1px;
+
+            @include mobile{ 
+                font-size: $title_font_size-mobile;
+                letter-spacing: 0.5px;
+            }
+        }
+        
+        p{
+            font-size: $subtitile_font_size;
+            font-style: italic;
+            letter-spacing: 1px;
+            font-family: $font2;
+        }
+    }
+
+    .section_content{
+        text-align: center;
+        
+
+        .col-md-4{
+            padding-bottom: 20px;
+        }
+        
+
+        img{
+            border: 1px solid color(buton_color);
+            margin-bottom: 10px;
+        }
+
+        img:hover{
+            transition: 0.7s;
+            border: 1px solid color(buton_color);
+            background: color(buton_color);
+        }
+
+        p{
+            letter-spacing: 1px;
+
+            @include mobile{ 
+                font-size: 15px;
+               
+            }
+        }
+
+        a.btn{
+            font-size: 14px;
+            background-color: color(buton_color);
+            text-transform: uppercase;
+            font-weight: bold;
+            color:color(white_color);
+            border-color: color(buton_color);
+            display: block;
+            font-size: 15px;
+            max-width: 130px;
+            margin: 0 auto;
+
+            @include mobile{ 
+                font-size: 13px;
+               
+            }
+
+        }
+
+        a.btn:hover,a.btn:focus{
+            background-color: color(grey_color);
+            border-color: color(grey_color);
+        }
+    }
+}
+
+
+// pro_solutions
+#pro_solutions{
+    background:color(blog_background);
+    padding-top: 40px;
+    padding-bottom: 40px;
+
+    @include tab{ 
+        padding-bottom: 0px;
+    }
+    
+
+    .section_heading{
+        text-align: center;
+        margin-bottom: 30px !important;
+        max-width: 540px;
+        margin: 0 auto;
+
+        @include mobile{ 
+            margin-bottom: 1px !important;
+        }
+
+        h2{
+            font-size: $title_font_size;
+            font-weight: bold;
+            letter-spacing: 1px;
+
+            @include mobile{ 
+                font-size: $title_font_size-mobile;
+                letter-spacing: 0.5px;
+            }
+        }
+        
+        p{
+            font-size: $subtitile_font_size;
+            font-style: italic;
+            letter-spacing: 1px;
+            font-family: $font2;
+        }
+    }
+
+    .container{
+        padding-bottom: 40px;
+
+        @include tab{ 
+            padding-bottom: 1px !important;
+        }
+
+         .row{
+            margin-bottom: 50px;
+        }
+    }
+    
+
+    .container .row .col-md-4.left_image{
+        margin: 0 auto;
+        text-align: center;
+
+         h3{
+            font-size: 17px;
+            font-weight: bold;
+         }
+
+         p{
+            font-size: 17px;
+            font-style: italic;
+            font-family: $font2;
+         }
+
+        img{
+            position: absolute;
+            left: -220px;
+            transform: rotate(-20deg);
+            border: 1px solid color(buton_color);
+
+            @include tab{ 
+                position: static;
+                left: auto;
+                transform: none;
+                margin-bottom: 10px;
+            }
+        }
+
+        img:hover{
+            transform: none;
+            transition: 0.7s; 
+            border: 1px solid color(buton_color);
+            background: color(buton_color);  
+        }
+    }
+
+    .container .row .col-md-4.right_image{
+        margin: 0 auto;
+        text-align: center;
+
+        h3{
+            font-size: 17px;
+            font-weight: bold;
+         }
+
+
+         p{
+            font-size: 17px;
+            font-style: italic;
+            font-family: $font2;
+         }
+
+        img{
+            position: absolute;
+            right: -220px;
+            transform: rotate(20deg);
+            border: 1px solid color(buton_color);
+
+            @include tab{ 
+                position: static;
+                right: auto;
+                transform: none;
+                margin-bottom: 10px;
+            }
+        }
+
+        img:hover{
+            transform: none;
+            transition: 0.7s; 
+            border: 1px solid color(buton_color);
+            background: color(buton_color);  
+        }
+
+
+
+        
+    }
+}
+
+
+//blog_section
+#blog_section{
+    padding-top: 40px;
+    padding-bottom: 40px;
+
+    .section_heading{
+        text-align: center;
+        margin-bottom: 30px !important;
+        max-width: 540px;
+        margin: 0 auto;
+
+        @include mobile{ 
+            margin-bottom: 1px !important;
+        }
+
+        h2{
+            font-size: $title_font_size;
+            font-weight: bold;
+            letter-spacing: 1px;
+
+            @include mobile{ 
+                font-size: $title_font_size-mobile;
+                letter-spacing: 0.5px;
+            }
+        }
+        
+        p{
+            font-size: $subtitile_font_size;
+            font-style: italic;
+            letter-spacing: 1px;
+            font-family: $font2;
+        }
+    }
+
+    .blog_post_block{
+
+        margin: 0 auto;
+        text-align: center;
+        
+
+        h3{
+            font-size: 17px;
+            font-weight: bold;
+         }
+
+         p{
+            font-size: 17px;
+            font-style: italic;
+            font-family: $font2;
+         }
+
+         .image_box{
+             overflow: hidden;
+             margin: 0 auto;
+             max-width: 150px;
+             max-height: 150px;
+             margin-top: 20px;
+             margin-bottom: 20px;
+              
+
+            img:hover{
+                transform: scale(1.5);  
+                transition: 0.7s;
+             }
+         }
+         
+
+    }
+
+    .col-md-12{  
+
+        button {
+            margin-top: 20px !important;
+            font-family: $font;
+            background-color: color(buton_color);
+            text-transform: uppercase;
+            font-weight: bold;
+            display: block;
+            font-size: 16px;
+            max-width: 200px;
+            color:color(white_color);
+            border-color: color(buton_color);
+            margin: 0 auto;
+        }
+
+        button:hover{
+            background-color: color(grey_color);
+            border-color: color(grey_color);
+            transition: 0.7s;
+        }
+
+    }
+
+
+}
+
+
+
+//contact_section
+#contact_section{
+    padding-top: 40px;
+    padding-bottom: 40px;
+    background:color(blog_background);
+
+    .section_heading{
+        text-align: center;
+        margin-bottom: 30px !important;
+        max-width: 540px;
+        margin: 0 auto;
+
+        @include mobile{ 
+            margin-bottom: 1px !important;
+        }
+
+        h2{
+            font-size: $title_font_size;
+            font-weight: bold;
+            letter-spacing: 1px;
+
+            @include mobile{ 
+                font-size: $title_font_size-mobile;
+                letter-spacing: 0.5px;
+            }
+        }
+        
+        p{
+            font-size: $subtitile_font_size;
+            font-style: italic;
+            letter-spacing: 1px;
+            font-family: $font2;
+        }
+    }
+
+    .section_form{
+        max-width: 800px;
+        font-family: $font;
+
+        label{
+            font-weight: bold;
+
+        }
+
+        input, select, textarea {
+            border: 1px solid color(grey_color);
+            font-family: $font2;
+   
+        }
+
+        .col-md-12{  
+
+            button {
+                font-family: $font;
+                background-color: color(buton_color);
+                text-transform: uppercase;
+                font-weight: bold;
+                display: block;
+                font-size: 16px;
+                max-width: 200px;
+                color:color(white_color);
+                border-color: color(buton_color);
+                margin: 0 auto;
+            }
+
+            button:hover{
+                background-color: color(grey_color);
+                border-color: color(grey_color);
+                transition: 0.7s;
+            }
+
+        }
+        
+    }
+
+}
+
+
+// site_footer
+#site_footer{
+    background: color(light_black);
+    color: color(white_color);
+    padding-top: 40px;
+    padding-bottom: 40px;
+
+    .author{
+        text-align: center;
+
+        h3{
+
+            font-weight: bold;
+            margin-bottom: 0;
+
+            span{
+                font-weight: normal;
+                font-style: italic;
+            }
+        }
+
+        p{
+            letter-spacing: 1.2px;
+            font-size: 15px;
+            font-style: italic;
+            font-family: $font2;
+        }
+        
+        ul{
+
+            list-style: none;
+            margin-top: 30px;
+            margin-bottom: 0;
+
+            li{
+                display: inline-block;
+                margin-left: 10px;
+                margin-right: 10px;
+
+                @include mobile{ 
+                    margin-left: 5px;
+                    margin-right: 5px;
+                }
+                
+                a{
+                    font-size: 20px;
+
+                    i{
+                        background: color(buton_color);
+                        color: color(white_color) !important;
+                        padding: 10px;
+                        border-radius: 25px;
+                    }  
+
+                    i:hover{
+                        background-color: color(grey_color);
+                        border-color: color(grey_color);
+                        transition: 0.7s;
+                    }
+                    
+                }
+            }
+
+        }
+
+    }
+
+}
